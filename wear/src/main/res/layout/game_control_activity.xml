@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.wearable.view.BoxInsetLayout
+    android:id="@+id/container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF000000"
+    android:keepScreenOn="true"
+    tools:context=".GameControlActivity"
+    tools:deviceIds="wear"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_box="all"
+        >
+
+        <View
+            android:id="@+id/meteor"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/meteor"
+            />
+
+        <TextView
+            android:id="@+id/meteor_count"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_alignBottom="@id/meteor"
+            android:layout_alignTop="@id/meteor"
+            android:layout_marginEnd="8dp"
+            android:layout_toStartOf="@id/meteor"
+            android:gravity="end|center_vertical"
+            android:text="0"
+            android:textColor="#FFCCCCCC"
+            android:textSize="20sp"/>
+
+        <com.juanmrivero.wearshoot.ShootView
+            android:id="@+id/shoot_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_above="@+id/meteor"
+            android:layout_alignParentTop="true"
+            android:clickable="true"
+            />
+
+
+        <TextView
+            android:id="@+id/game_over"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_above="@+id/meteor"
+            android:layout_alignParentTop="true"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/game_over"
+            android:textColor="@color/aim_selector"
+            android:textSize="36sp"
+            android:visibility="gone"
+            />
+
+    </RelativeLayout>
+
+
+</android.support.wearable.view.BoxInsetLayout>
